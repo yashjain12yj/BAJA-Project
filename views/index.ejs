@@ -1,21 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-  	<style type="text/css">
-  		.title{
-  			text-align: center;
-  		}
-  	</style>
-    <h1 class="title"><%= title %></h1>
-    <p>Lattitude : <%= lat %></p>
-    <p>Longititude : <%= long %></p>
-    <p>Voltage : <%= voltage %></p>
-    <p>Current: <%= current %></p>
-    <p>Driver Info: <%= driverName %></p>
-    <p>Speed : <%= speed %></p>
-  </body>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+        <title><%= title %></title>
+
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body>
+      	<style type="text/css">
+      		.title{
+      			text-align: center;
+                padding-bottom: 50px;
+      		}
+      	</style>
+        <h1 class="title"><%= title %></h1>
+        
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Driver No.</th>
+                    <th scope="col">Driver Name</th>
+                    <th scope="col">Speed</th>
+                    <th scope="col">RPM</th>
+                    <th scope="col">Steering Angle</th>
+                    <th scope="col">Tilt Angle</th>
+                    <th scope="col">Temperature</th>
+                    <th scope="col">Current</th>
+                    <th scope="col">Voltage</th>
+                    <th scope="col">Lattitude</th>
+                    <th scope="col">Longititude</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td><%= driverNo %></td>
+                    <td><%= driverName %></td>
+                    <td><%= speed %></td>
+                    <td><%= rpm %></td>
+                    <td><%= steeringAngle %></td>
+                    <td><%= tiltAngle %></td>
+                    <td><%= temp %></td>
+                    <td><%= current %></td>
+                    <td><%= voltage %></td>
+                    <td><%= lat %></td>
+                    <td><%= long %></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    </body>
 </html>

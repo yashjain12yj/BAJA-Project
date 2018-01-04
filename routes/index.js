@@ -6,17 +6,15 @@ driverInfo = {
 	driverNo: 2
 }
 
+let lat=1, long=2, voltage=3, current=4, driverNo=1, speed=12, steeringAngle=50, tiltAngle=55, rpm=366, temp = 34, driverName = "Garvit";
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	let lat=1, long=2, voltage=3, current=4, driverNo=1, speed=12, steeringAngle=50, tiltAngle=55, rpm=366, temp = 34, driverName = "Garvit";
-
-  	res.render('index', { title: 'BAHA Project', lat, long, voltage, current, driverNo, speed, driverName });
+  	res.render('index', { title: 'Acrostreak - A BAJA Project', lat, long, voltage, current, driverNo, speed, driverName, rpm, temp, tiltAngle, steeringAngle });
 });
 
 router.get('/data', function(req, res, next) {
-	let lat=1, long=2, voltage=3, current=4, driverNo=1, speed=12, steeringAngle=50, tiltAngle=55, rpm=366, temp = 34;
-
-  	res.render('index', { title: 'BAHA Project', lat, long, voltage, current, driverNo, speed });
+  	res.render('index', { title: 'Acrostreak - A BAJA Project', lat, long, voltage, current, driverNo, speed });
 });
 
 
