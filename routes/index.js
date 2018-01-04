@@ -6,7 +6,7 @@ driverInfo = {
 	driverNo: 2
 }
 
-let lat=1, long=2, voltage=3, current=4, driverNo=1, speed=12, steeringAngle=50, tiltAngle=55, rpm=366, temp = 34, driverName = "Garvit";
+let lat=22.7248170, long=75.8243170, voltage=3, current=4, driverNo=1, speed=12, steeringAngle=50, tiltAngle=55, rpm=366, temp = 34, driverName = "Garvit";
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
