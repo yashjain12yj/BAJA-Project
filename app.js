@@ -71,7 +71,15 @@ app.get('/data', function(req, res){
 		driverNo = req.query.driverNo;
 		driverName = driverNames[driverNo]
 	}
-	var date = new Date();
+
+	var currentTime = new Date();
+
+	var currentOffset = currentTime.getTimezoneOffset();
+
+	var ISTOffset = 330;   // IST offset UTC +5:30 
+
+	var date = new Date(currentTime.getTime() + (ISTOffset + currentOffset)*60000);
+	
 	var dd = date.getDate();
 	var mm = date.getMonth() + 1;
 	var yyyy = date.getFullYear();
