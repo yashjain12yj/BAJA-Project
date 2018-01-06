@@ -34,9 +34,9 @@
                 </tr>
             </thead>
             <tbody>
-                <% for(var i=0; i < data.length; i++) { %>
+                <% for(var i=data.length-1; i >= 0; i--) { %>
                 <tr>
-                    <th scope="row"><%= i+1 %></th>
+                    <th scope="row"><%= i %></th>
                     <td id="date"><%= data[i].onDate %></td>
                     <td id="time"><%= data[i].onTime %></td>
                     <td id="driverName"><%= data[i].driverName %></td>
