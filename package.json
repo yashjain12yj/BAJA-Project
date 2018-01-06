@@ -1,5 +1,6 @@
 {
   "name": "baha-project",
+  "author": "Yash Jain",
   "version": "0.0.0",
   "private": true,
   "scripts": {
