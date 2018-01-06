@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+        <title><%= title %></title>
+
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body>
+      	<h1 class="title"><%= title %></h1>
+        
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Driver Name</th>
+                    <th scope="col">Speed</th>
+                    <th scope="col">RPM</th>
+                    <th scope="col">Steering Angle</th>
+                    <th scope="col">Tilt Angle</th>
+                    <th scope="col">Temperature</th>
+                    <th scope="col">Current</th>
+                    <th scope="col">Voltage</th>
+                    <th scope="col">Lattitude</th>
+                    <th scope="col">Longititude</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i < data.length; i++) { %>
+                <tr>
+                    <th scope="row"><%= i+1 %></th>
+                    <td id="date"><%= data[i].onDate %></td>
+                    <td id="time"><%= data[i].onTime %></td>
+                    <td id="driverName"><%= data[i].driverName %></td>
+                    <td id="speed"><%= data[i].speed %></td>
+                    <td id="rpm"><%= data[i].rpm %></td>
+                    <td id="steeringAngle"><%= data[i].steeringAngle %></td>
+                    <td id="tiltAngle"><%= data[i].tiltAngle %></td>
+                    <td id="temp"><%= data[i].temp %></td>
+                    <td id="current"><%= data[i].current %></td>
+                    <td id="voltage"><%= data[i].voltage %></td>
+                    <td id="lat"><%= data[i].lat %></td>
+                    <td id="long"><%= data[i].long %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        
+        <!-- Scoket.io CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    </body>
+</html>
