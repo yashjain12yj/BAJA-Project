@@ -13,7 +13,19 @@
         <link rel='stylesheet' href='/stylesheets/style.css' />
     </head>
     <body>
-      	<h1 class="title"><%= title %></h1>
+        <div class="row">
+            <div class="title col-sm-11 col-md-11">
+                <h1><strong>ACROSTREAK</strong></h1>
+                <h2>Acropolis Institute of Technology and Research</h2>
+                <h3><u><b>eBaja 2018</b></u></h3>
+            </div>
+            <div class="col-sm-1 col-md-1 download-btn">
+                <form method="get" action="/download">
+                    <button type="submit" class="btn btn-default">Download</button>           
+                </form>
+                
+            </div>    
+        </div>
         
         <table class="table table-striped">
             <thead class="thead-dark">
@@ -21,10 +33,8 @@
                     <th scope="col">S.No</th>
                     <th scope="col">Date</th>
                     <th scope="col">Time</th>
-                    <th scope="col">Driver Name</th>
                     <th scope="col">Speed</th>
                     <th scope="col">RPM</th>
-                    <th scope="col">Steering Angle</th>
                     <th scope="col">Tilt Angle</th>
                     <th scope="col">Temperature</th>
                     <th scope="col">Current</th>
@@ -39,10 +49,8 @@
                     <th scope="row"><%= data.length - i %></th>
                     <td id="date"><%= data[i].onDate %></td>
                     <td id="time"><%= data[i].onTime %></td>
-                    <td id="driverName"><%= data[i].driverName %></td>
                     <td id="speed"><%= data[i].speed %></td>
                     <td id="rpm"><%= data[i].rpm %></td>
-                    <td id="steeringAngle"><%= data[i].steeringAngle %></td>
                     <td id="tiltAngle"><%= data[i].tiltAngle %></td>
                     <td id="temp"><%= data[i].temp %></td>
                     <td id="current"><%= data[i].current %></td>

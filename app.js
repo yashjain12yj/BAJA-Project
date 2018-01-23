@@ -8,6 +8,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var json2csv = require('json2csv');
+var fs = require('fs');
 
 var Record = require('./models/recordSchema');
 
@@ -47,7 +49,29 @@ app.get('/record', function(req,res){
 			throw err;
 		}
 		console.log('data found',data[0].onDate, data[0].onTime)
-		res.render('records', {title: 'Acrostreak - A BAJA Project', data});
+		res.render('records', {title: 'Acrostreak- A BAJA Project', data});
+	});
+});
+
+app.get('/download', function(req,res){
+	var fields = ['onDate', 'onTime', 'temp', 'voltage', 'current', 'speed', 'tiltAngle', 'rpm', 'lat', 'long'];
+	Record.find({}, function(err, data){
+		if (err) {
+			console.log("Err in find record")
+			res.send('try again');
+		}
+		json2csv({ data: data, fields: fields }, function(err, csv) {
+			if (err) res.send('try again');
+			// console.log(csv);
+			fs.writeFile('file.csv', csv, function(err) {
+			  if (err) throw err;
+			  console.log('file saved');
+			  res.attachment('file.csv');
+			  res.status(200).send(csv);
+			  // res.sendFile('file.csv', { root: __dirname });
+			});
+			// res.send(csv);
+		});
 	});
 });
 
@@ -55,7 +79,7 @@ app.get('/record', function(req,res){
 
 
 // 127.0.0.1:5000/data?driverNo=1&temp=10&voltage=10&current=10&speed=10&lat=22.7248170&long=75.8243170&rpm=10&steeringAngle=10&tiltAngle=10
-
+// acrostreak.herokuapp.com
 app.get('/data', function(req, res){
 	temp = req.query.temp
 	lat = req.query.lat
